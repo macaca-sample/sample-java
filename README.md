@@ -39,7 +39,6 @@ when source code changes, run CI Samples
 2. npm publish
 3. run CI sample
 
-
 ## Problems
 
 1. when you run iosSampleTest.java,you may meet this problem:
