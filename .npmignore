@@ -1,0 +1,14 @@
+node_modules
+.travis.yml
+*.sw*
+*.un~
+*.dex
+*.class
+bin/
+gen/
+local.properties
+.classpath
+.project
+.DS_Store
+target
+.settings
