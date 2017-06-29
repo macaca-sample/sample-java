@@ -12,6 +12,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "macaca-cli": "^1.2.0"
+    "macaca-cli": "^2.0.4"
   }
 }
