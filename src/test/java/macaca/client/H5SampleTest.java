@@ -31,12 +31,14 @@ public class H5SampleTest {
 
         System.out.println("------------#1 h5 web test-------------------");
 
+        /*
         driver.get("http://www.baidu.com");
         driver.elementById("index-kw").sendKeys("macaca");
         driver.elementById("index-bn").click();
         driver.sleep(5000);
         String source = driver.source();
         Assert.assertThat(source, containsString("macaca"));
+        */
     }
 
     @After public void tearDown() throws Exception {
