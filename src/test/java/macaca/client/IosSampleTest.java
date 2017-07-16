@@ -85,7 +85,7 @@ public class IosSampleTest {
 
 
         // 拖拽一个元素或者在多个坐标之间移动,实现tableview滚动操作
-        driver.drag(200,420,200,20,2, 100);
+        driver.drag(200,420,200,20,2);
         driver.sleep(1000);
         customBack();
         driver.sleep(1000);
@@ -139,7 +139,7 @@ public class IosSampleTest {
     public void customBack() {
     	// iOS通过视图的右滑完成返回操作
     	try {
-			driver.drag(0, 100, 300, 100, 0.5, 10);
+			driver.drag(0, 100, 300, 100, 0.5);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
