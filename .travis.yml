@@ -29,14 +29,12 @@ matrix:
       - os: osx
         env: TEST_SUITE=ios
         osx_image: xcode8.3
-        jdk: oraclejdk8
-        language: java
+        language: objective-c
         before_install:
           - brew update
           - brew outdated carthage || brew upgrade carthage > /dev/null 2>&1
           - brew install ios-webkit-debug-proxy > /dev/null 2>&1
           - brew install nvm > /dev/null 2>&1
-          - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
         before_script:
           - source $(brew --prefix nvm)/nvm.sh
           - nvm install 7

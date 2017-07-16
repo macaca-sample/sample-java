@@ -22,6 +22,7 @@ travis-android: install server
 travis-ios: install server
 	npm install macaca-ios --save-dev
 	${npm_bin}/macaca doctor
+	echo $PATH
 	mvn -s settings.xml clean install -Dmaven.test.skip=true
 	mvn test -Dtest=IosSampleTest
 travis-android-browser: install server
