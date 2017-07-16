@@ -29,6 +29,7 @@ matrix:
       - os: osx
         env: TEST_SUITE=ios
         osx_image: xcode8.3
+        jdk: oraclejdk8
         language: objective-c
         before_install:
           - brew update
