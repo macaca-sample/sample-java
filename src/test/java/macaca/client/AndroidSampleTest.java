@@ -32,7 +32,7 @@ public class AndroidSampleTest {
         porps.put("app", "https://npmcdn.com/android-app-bootstrap@latest/android_app_bootstrap/build/outputs/apk/android_app_bootstrap-debug.apk");
         porps.put("reuse", 1);
         // device id
-        porps.put("udid","0715f7ea12391134");
+//        porps.put("udid","0715f7ea12391134");
         JSONObject desiredCapabilities = new JSONObject();
         desiredCapabilities.put("desiredCapabilities", porps);
         driver.initDriver(desiredCapabilities);
