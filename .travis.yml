@@ -31,10 +31,10 @@ matrix:
         osx_image: xcode8.3
         language: objective-c
         before_install:
-          - brew update
-          - brew outdated carthage || brew upgrade carthage
-          - brew install ios-webkit-debug-proxy
-          - brew install nvm
+          - brew update 
+          - brew outdated carthage || brew upgrade carthage > /dev/null 2>&1
+          - brew install ios-webkit-debug-proxy > /dev/null 2>&1
+          - brew install nvm > /dev/null 2>&1
         before_script:
           - source $(brew --prefix nvm)/nvm.sh
           - nvm install 7
