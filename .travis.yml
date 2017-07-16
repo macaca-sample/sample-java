@@ -32,9 +32,9 @@ matrix:
         language: objective-c
         before_install:
           - brew update
-          - brew install carthage
+          - brew outdated carthage || brew upgrade carthage
           - brew install ios-webkit-debug-proxy
-          - brew install nvm 
+          - brew install nvm
         before_script:
           - source $(brew --prefix nvm)/nvm.sh
           - nvm install 7
