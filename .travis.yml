@@ -30,7 +30,7 @@ matrix:
         env: TEST_SUITE=ios
         osx_image: xcode8.3
         jdk: oraclejdk8
-        language: objective-c
+        language: java
         before_install:
           - brew update
           - brew outdated carthage || brew upgrade carthage > /dev/null 2>&1
