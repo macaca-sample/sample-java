@@ -11,6 +11,9 @@ Macaca test sample for Java
 [travis-image]: https://img.shields.io/travis/macaca-sample/sample-java.svg?style=flat-square
 [travis-url]: https://travis-ci.org/macaca-sample/sample-java
 
+## more docs 参考文章
+[https://testerhome.com/junhe](https://testerhome.com/junhe)
+
 ## Test
 
 Start macaca server
