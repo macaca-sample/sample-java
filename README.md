@@ -19,11 +19,16 @@ Start macaca server
 $ macaca server --verbose
 ```
 
-exec test
+install mvn dependencies：
+
+`` bash
+$ mvn -s settings.xml clean install -Dmaven.test.skip=true
+```
+
+run test 
 
 ``` bash
-$ mvn -s settings.xml clean install
-$ mvn test
+$ mvn -s settings.xml test -Dtest=macaca.client.AndroidSampleTest
 ```
 
 ## App Source Code

@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: macaca.webdriver.client:macacaclient:2.0.11" level="project" />
+    <orderEntry type="library" name="Maven: macaca.webdriver.client:macacaclient:2.0.13" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
