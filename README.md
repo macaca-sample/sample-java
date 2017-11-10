@@ -12,6 +12,7 @@ Macaca test sample for Java
 [travis-url]: https://travis-ci.org/macaca-sample/sample-java
 
 ## more docs 参考文章
+
 [https://testerhome.com/junhe](https://testerhome.com/junhe)
 
 ## Test
@@ -28,7 +29,7 @@ install mvn dependencies：
 $ mvn -s settings.xml clean install -Dmaven.test.skip=true
 ```
 
-run test 
+run test
 
 ``` bash
 $ mvn -s settings.xml test -Dtest=macaca.client.AndroidSampleTest
