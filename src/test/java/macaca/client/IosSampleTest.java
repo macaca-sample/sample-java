@@ -4,20 +4,23 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import macaca.client.commands.Element;
 import macaca.client.common.GetElementWay;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.File;
-
-import javax.swing.text.AbstractDocument.BranchElement;
+import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class IosSampleTest {
     MacacaClient driver = new MacacaClient();
+    // set screenshot save path
+    File directory = new File("");
+    public String courseFile = directory.getCanonicalPath();
+
+    public IosSampleTest() throws IOException {
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -42,13 +45,27 @@ public class IosSampleTest {
     }
 
     @Test
-    public void test_case_1() throws Exception {
-        // set screenshot save path
-        File directory = new File("");
-        String courseFile = directory.getCanonicalPath();
+    public void testCaseOne() throws Exception {
 
 
         System.out.println("------------#1 login test-------------------");
+        loginTest();
+
+        System.out.println("------------#2 scroll tableview test-------------------");
+        scrollTableViewTest();
+
+        System.out.println("------------#3 webview test-------------------");
+        webViewTest();
+
+        System.out.println("------------#4 baidu web test-------------------");
+        baiduWebTest();
+
+        System.out.println("------------#5 logout test-------------------");
+        logoutTest();
+
+    }
+
+    public void loginTest() throws Exception {
 
         driver.elementByXPath("//XCUIElementTypeTextField[1]").sendKeys("中文+Test+12345678");
         driver.elementByXPath("//XCUIElementTypeSecureTextField[1]").sendKeys("111111");
@@ -56,24 +73,23 @@ public class IosSampleTest {
         // driver.elementByName("Done").click();
         // login
         driver.elementByName("Login").click();
+    }
 
-
-        System.out.println("------------#2 scroll tableview test-------------------");
-
+    public void scrollTableViewTest() throws Exception {
         driver.elementByName("HOME").click();
         driver.elementByName("list").click();
         driver.sleep(1000);
 
         //  ci tap()
         // 比如需要点击某个控件的特定位置
-        Element  alertCell = driver.getElement(GetElementWay.NAME, "Alert");
+        Element alertCell = driver.getElement(GetElementWay.NAME, "Alert");
         JSONObject alertCellRect = (JSONObject) alertCell.getRect();
-    	int x = alertCellRect.getIntValue("x");
-		int y = alertCellRect.getIntValue("y");
-		int width = alertCellRect.getIntValue("width");
-		int height = alertCellRect.getIntValue("height");
-		int centerX = x + width/2;
-		int centerY = y + height/2;
+        int x = alertCellRect.getIntValue("x");
+        int y = alertCellRect.getIntValue("y");
+        int width = alertCellRect.getIntValue("width");
+        int height = alertCellRect.getIntValue("height");
+        int centerX = x + width / 2;
+        int centerY = y + height / 2;
 
         driver.tap(centerX, centerY);
         driver.sleep(1000);
@@ -83,16 +99,15 @@ public class IosSampleTest {
         driver.sleep(1000);
         customBack();
 
-
         // 拖拽一个元素或者在多个坐标之间移动,实现tableview滚动操作
-        driver.drag(200,420,200,20,2);
+        driver.drag(200, 420, 200, 20, 2);
         driver.sleep(1000);
         customBack();
         driver.sleep(1000);
+    }
 
 
-        System.out.println("------------#3 webview test-------------------");
-
+    public void webViewTest() throws  Exception {
         driver.elementByName("Webview").click();
         driver.sleep(3000);
         // save screen shot
@@ -103,8 +118,9 @@ public class IosSampleTest {
         ele.click();
         driver.sleep(1000);
         switchToWebView(driver).elementById("popView").click();
+    }
 
-        System.out.println("------------#4 baidu web test-------------------");
+    public void baiduWebTest() throws Exception {
         switchToNative(driver).elementByName("Baidu").click();
         driver.sleep(10000);
         driver.saveScreenshot(courseFile + "/baidu.png");
@@ -127,8 +143,10 @@ public class IosSampleTest {
         String source = driver.source();
 
         Assert.assertThat(source, containsString("TesterHome"));
+    }
 
-        System.out.println("------------#5 logout test-------------------");
+
+    public void logoutTest() throws  Exception {
 
         switchToNative(driver).elementByName("PERSONAL").click();
         driver.sleep(1000);
@@ -136,23 +154,25 @@ public class IosSampleTest {
         driver.sleep(1000);
     }
 
+
     public void customBack() {
-    	// iOS通过视图的右滑完成返回操作
-    	try {
-			driver.drag(0, 100, 300, 100, 0.5);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        // iOS通过视图的右滑完成返回操作
+        try {
+            driver.drag(0, 100, 300, 100, 0.5);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
+
     // switch to the context of the last pushed webview
-    public  MacacaClient switchToWebView(MacacaClient driver) throws Exception {
+    public MacacaClient switchToWebView(MacacaClient driver) throws Exception {
         JSONArray contexts = driver.contexts();
-        return driver.context(contexts.get(contexts.size()-1).toString());
+        return driver.context(contexts.get(contexts.size() - 1).toString());
     }
 
     // switch to the context of native
-    public  MacacaClient switchToNative(MacacaClient driver) throws Exception {
+    public MacacaClient switchToNative(MacacaClient driver) throws Exception {
         JSONArray contexts = driver.contexts();
         return driver.context(contexts.get(0).toString());
     }
