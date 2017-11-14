@@ -15,7 +15,8 @@ public class DesktopSampleTest {
 
     MacacaClient driver = new MacacaClient();
 
-    @Before public void setUp() throws Exception {
+    @Before
+    public void setUp() throws Exception {
 
 		/*
            Desired Capabilities are used to configure webdriver when initiating the session.
@@ -32,7 +33,8 @@ public class DesktopSampleTest {
                 .get("https://www.baidu.com");
     }
 
-    @Test public void test_case_1() throws Exception {
+    @Test
+    public void testCaseOne() throws Exception {
         driver.elementById("kw").sendKeys("中文");
         driver.sleep(1000);
         driver.elementById("su").click();
@@ -46,7 +48,8 @@ public class DesktopSampleTest {
         driver.takeScreenshot();
     }
 
-    @Test public void test_case_2() throws Exception {
+    @Test
+    public void testCaseTwo() throws Exception {
         System.out.println("test case #2");
 
         driver.get("https://www.baidu.com").elementById("kw").sendKeys("macaca");
@@ -59,7 +62,8 @@ public class DesktopSampleTest {
         driver.takeScreenshot().sleep(3000);
     }
 
-    @Test public void test_case_3() throws Exception {
+    @Test
+    public void testCaseThree() throws Exception {
         System.out.println("test case #3");
 
         driver.get("https://www.baidu.com");
@@ -67,7 +71,8 @@ public class DesktopSampleTest {
         driver.sleep(3000);
     }
 
-    @After public void tearDown() throws Exception {
+    @After
+    public void tearDown() throws Exception {
         driver.quit();
     }
 }

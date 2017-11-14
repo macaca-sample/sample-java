@@ -2,16 +2,15 @@ package macaca.client;
 
 import com.alibaba.fastjson.JSONObject;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.containsString;
 
 public class H5SampleTest {
     MacacaClient driver = new MacacaClient();
 
-    @Before public void setUp() throws Exception {
+    @Before
+    public void setUp() throws Exception {
         // platform: android or ios
         String platform = "android";
 
@@ -27,7 +26,8 @@ public class H5SampleTest {
         driver.initDriver(desiredCapabilities);
     }
 
-    @Test public void test_case_1() throws Exception {
+    @Test
+    public void testCaseOne() throws Exception {
 
         System.out.println("------------#1 h5 web test-------------------");
 
@@ -41,7 +41,8 @@ public class H5SampleTest {
         */
     }
 
-    @After public void tearDown() throws Exception {
+    @After
+    public void tearDown() throws Exception {
         driver.quit();
     }
 }
