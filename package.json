@@ -10,8 +10,5 @@
     "type": "git",
     "url": "git://github.com/macaca-sample/sample-java.git"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "macaca-cli": "^2.0.4"
-  }
+  "license": "MIT"
 }

@@ -53,7 +53,7 @@ public class IosSampleTest {
         driver.elementByXPath("//XCUIElementTypeTextField[1]").sendKeys("中文+Test+12345678");
         driver.elementByXPath("//XCUIElementTypeSecureTextField[1]").sendKeys("111111");
         // Hide keyboard
-        driver.elementByName("Done").click();
+        // driver.elementByName("Done").click();
         // login
         driver.elementByName("Login").click();
 

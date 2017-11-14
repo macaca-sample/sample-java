@@ -12,3 +12,4 @@ target
 npm-debug.log
 .settings
 node_modules/
+*.png
