@@ -8,7 +8,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/macaca-sample/sample-java.git"
+    "url": "https://github.com/macaca-sample/sample-java"
   },
-  "license": "MIT"
+  "scripts": {
+    "contributor": "git-contributor"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "git-contributor": "^1.0.8"
+  }
 }
