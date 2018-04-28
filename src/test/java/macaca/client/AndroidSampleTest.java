@@ -3,8 +3,6 @@ package macaca.client;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import macaca.client.commands.Element;
-import macaca.client.common.ElementSelector;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,6 +10,8 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import macaca.client.commands.Element;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
@@ -68,8 +68,8 @@ public class AndroidSampleTest {
         driver.elementById("com.github.android_app_bootstrap:id/mobileNoEditText")
                 .sendKeys("中文+Test+12345678");
 
-        ElementSelector selector = driver.elementsByClassName("android.widget.EditText");
-        selector.getIndex(1).sendKeys("111111");
+        List<Element> elements = driver.elementsByClassName("android.widget.EditText");
+        elements.get(1).sendKeys("111111");
         driver.elementByName("Login").click();
         driver.sleep(1000);
     }

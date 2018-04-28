@@ -67,7 +67,7 @@ public class DesktopSampleTest {
         System.out.println("test case #3");
 
         driver.get("https://www.baidu.com");
-        driver.elementsByXPath("//*[@id=\"u1\"]/a").getIndex(0).click();
+        driver.elementsByXPath("//*[@id=\"u1\"]/a").get(0).click();
         driver.sleep(3000);
     }
 
